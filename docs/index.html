@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>ArdView</title>
-<meta name="description" content="광고 없는 무료 이미지 보기. 빠른 넘기기, 커서 기준 확대, 움직이는 gif·webp.">
+<meta name="description" content="광고 없는 무료 이미지 보기. 꿀뷰와 같은 단축키, EXIF 정보, 압축 파일 안 그림, 두 쪽 보기.">
 <link rel="icon" href="icon.png">
 <style>
   :root { --bg:#fafafb; --card:#fff; --ink:#202124; --sub:#6e7178; --line:#e1e3e8; --accent:#2563eb; }
@@ -47,31 +47,34 @@
     <a class="btn" id="sponsor" href="#" hidden>후원하기</a>
     <a class="btn" id="feedback" href="https://chal-na.notion.site/2550a4124c6843fcb1086c9edb7d75f3" target="_blank" rel="noopener">버그 신고 · 기능 요청</a>
   </div>
-  <p class="meta">윈도우 10·11 64비트 · 관리자 권한 없이 설치 · 설치 파일 69MB</p>
+  <p class="meta">윈도우 10·11 64비트 · 관리자 권한 없이 설치 · 설치 파일 70MB</p>
 
   <section>
     <h2>할 수 있는 것</h2>
     <div class="grid">
-      <div class="card"><b>빠른 넘기기</b><span>앞뒤 그림을 미리 읽어 둬서 바로 넘어갑니다</span></div>
-      <div class="card"><b>휠로 넘기기</b><span>휠 = 다음 그림 · Ctrl+휠 = 커서 기준 확대</span></div>
-      <div class="card"><b>여러 형식</b><span>jpg · png · gif · webp · bmp · tiff · ico</span></div>
-      <div class="card"><b>움직이는 그림</b><span>gif · webp 를 그대로 재생</span></div>
-      <div class="card"><b>바로 선 사진</b><span>폰 사진의 회전 정보대로 세워서 보여 줌</span></div>
-      <div class="card"><b>광고 없음</b><span>설치 후 창이 뜨지 않음</span></div>
+      <div class="card"><b>꿀뷰와 같은 단축키</b><span>쓰던 손 그대로 · F1 로 전체 목록</span></div>
+      <div class="card"><b>빠른 넘기기</b><span>앞뒤 그림을 미리 읽어 둠 · ] [ 로 다음 폴더</span></div>
+      <div class="card"><b>확대 · 축소</b><span>아래 도구줄 버튼 · + − · Ctrl+휠 · 미리보기 창</span></div>
+      <div class="card"><b>사진 정보 (Tab)</b><span>히스토그램 · 카메라 · 렌즈 · 셔터 · 조리개 · ISO · GPS 지도</span></div>
+      <div class="card"><b>압축 파일 안 그림</b><span>zip · cbz · rar · 7z 를 풀지 않고 봄</span></div>
+      <div class="card"><b>두 쪽 보기</b><span>만화처럼 나란히 (왼→오 · 왼←오)</span></div>
+      <div class="card"><b>변환 (Ctrl+T)</b><span>jpg · png · webp · bmp 로, 크기 줄여서, 목록 전체도</span></div>
+      <div class="card"><b>슬라이드 쇼 · 책갈피</b><span>Ctrl+1~9 · B · 사진 폴더로 Insert</span></div>
+      <div class="card"><b>여는 형식</b><span>jpg png gif webp bmp tiff ico psd tga · heic avif jxr · RAW 미리보기</span></div>
     </div>
   </section>
 
   <section>
-    <h2>단축키</h2>
+    <h2>자주 쓰는 키</h2>
     <div class="grid">
       <div class="card"><b>← → · 휠</b><span>이전 · 다음 그림</span></div>
-      <div class="card"><b>Ctrl+휠 · + −</b><span>확대 · 축소</span></div>
-      <div class="card"><b>0 · 1</b><span>화면에 맞추기 · 원래 크기</span></div>
-      <div class="card"><b>Enter · 두 번 누르기</b><span>전체 화면 (Esc 로 끄기)</span></div>
-      <div class="card"><b>R · L</b><span>오른쪽 · 왼쪽으로 돌리기</span></div>
-      <div class="card"><b>Delete</b><span>휴지통으로</span></div>
+      <div class="card"><b>+ − · Ctrl+휠</b><span>확대 · 축소</span></div>
+      <div class="card"><b>0 · 9 · 8</b><span>100% · 창에 맞추기 · 폭에 맞추기</span></div>
+      <div class="card"><b>Tab</b><span>사진 정보 · EXIF</span></div>
+      <div class="card"><b>Alt+Enter · N</b><span>전체 화면 (Esc 로 끄기)</span></div>
+      <div class="card"><b>Delete · Insert</b><span>휴지통으로 · 사진 폴더로 복사</span></div>
     </div>
-    <p class="meta">오른쪽 클릭하면 모든 기능이 메뉴로 나옵니다.</p>
+    <p class="meta">휠로 확대하고 싶으면 F5 설정에서 「휠 = 확대·축소」를 켭니다. 오른쪽 클릭하면 모든 기능이 메뉴로 나옵니다.</p>
   </section>
 
   <section>
@@ -85,7 +88,7 @@
 
   <footer>
     <p>ArdView 는 무료입니다. 쓰다가 도움이 되었다면 후원으로 응원해 주세요.</p>
-    <p>쓴 오픈소스 SkiaSharp (MIT) · Skia (BSD) · <a href="THIRD_PARTY_NOTICES.txt">라이선스 전문</a></p>
+    <p>쓴 오픈소스 SkiaSharp (MIT) · Skia (BSD) · MetadataExtractor (Apache 2.0) · SharpCompress (MIT) · <a href="THIRD_PARTY_NOTICES.txt">라이선스 전문</a></p>
   </footer>
 </main>
 <script>

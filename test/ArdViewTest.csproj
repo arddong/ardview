@@ -4,12 +4,15 @@
     <TargetFramework>net8.0-windows</TargetFramework>
     <Nullable>enable</Nullable>
     <UseWindowsForms>true</UseWindowsForms>
+    <UseWPF>true</UseWPF>
     <ImplicitUsings>enable</ImplicitUsings>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <StartupObject>ArdViewTest.T</StartupObject>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="..\src\ArdView.cs" />
+    <Compile Include="..\src\*.cs" />
     <PackageReference Include="SkiaSharp" Version="4.155.0" />
+    <PackageReference Include="MetadataExtractor" Version="2.9.3" />
+    <PackageReference Include="SharpCompress" Version="0.50.7" />
   </ItemGroup>
 </Project>

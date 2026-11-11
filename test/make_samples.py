@@ -38,3 +38,38 @@ print("ok")
 import random
 g = Image.radial_gradient("L").resize((4000, 3000))
 Image.merge("RGB", (g, g.rotate(90, expand=False), g.transpose(Image.FLIP_LEFT_RIGHT))).save(os.path.join(o, "photo4k.jpg"), quality=92)
+
+# ── 1.1 표본 ──
+import struct, zipfile, io
+# TGA·PNM 은 Pillow 로
+base.save(os.path.join(o, "plain.tga"))
+base.save(os.path.join(o, "plain.ppm"))
+# PSD = 손으로 (RGB 8비트 무압축 합친 그림)
+w, h = base.size
+px = base.load()
+hdr = b"8BPS" + struct.pack(">H6xHIIHH", 1, 3, h, w, 8, 3)
+body = struct.pack(">I", 0) + struct.pack(">I", 0) + struct.pack(">I", 0) + struct.pack(">H", 0)
+planes = b"".join(bytes(px[x, y][c] for y in range(h) for x in range(w)) for c in range(3))
+open(os.path.join(o, "plain.psd"), "wb").write(hdr + body + planes)
+# EXIF 카메라·GPS
+ex = Image.Exif()
+ex[0x010F] = "Canon"; ex[0x0110] = "Canon EOS R6"
+gps = {1: "N", 2: (35.0, 10.0, 33.6), 3: "E", 4: (126.0, 54.0, 43.2)}
+ex[0x8825] = gps
+base.save(os.path.join(o, "gps.jpg"), quality=95, exif=ex)
+# 여러 쪽 tiff
+quad(40, 20).save(os.path.join(o, "pages.tif"), save_all=True, append_images=[Image.new("RGB", (40, 20), (0, 255, 0)), Image.new("RGB", (40, 20), (0, 0, 255))])
+# RAW 흉내 = 앞뒤 쓰레기 바이트 사이에 작은 썸네일 + 큰 미리보기 JPEG
+small = io.BytesIO(); Image.new("RGB", (16, 8), (0, 255, 0)).save(small, "JPEG")
+large = io.BytesIO(); quad(64, 32).save(large, "JPEG", quality=95)
+open(os.path.join(o, "fake.nef"), "wb").write(b"II*\x00" + b"\x00" * 500 + small.getvalue() + b"\x11" * 300 + large.getvalue() + b"\x00" * 100)
+# zip 안 그림 (한글 이름 · 하위 폴더 · 그림 아닌 것 섞음)
+zp = os.path.join(o, "comic.zip")
+with zipfile.ZipFile(zp, "w") as z:
+    for name, col in [("p10.png", (0, 0, 255)), ("p2.png", (0, 255, 0)), ("p1.png", (255, 0, 0))]:
+        b = io.BytesIO(); Image.new("RGB", (20, 30), col).save(b, "PNG"); z.writestr("chap/" + name, b.getvalue())
+    z.writestr("readme.txt", "x")
+    b = io.BytesIO(); Image.new("RGB", (20, 30), (9, 9, 9)).save(b, "PNG")
+    zi = zipfile.ZipInfo("표지.png"); zi.flag_bits &= ~0x800
+    z.writestr(zi, b.getvalue())
+print("ok2")
