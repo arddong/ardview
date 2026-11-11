@@ -1,12 +1,12 @@
 # ArdView
 
-광고 없는 무료 이미지 보기 (Windows 10·11 64비트). 꿀뷰와 같은 단축키로 씁니다.
+광고 없는 무료 이미지 보기 (Windows 10·11 64비트).
 
 다운로드: [Releases](https://github.com/arddong/ardview/releases/latest) · 소개 페이지: https://arddong.github.io/ardview/
 
 ## 1. 할 수 있는 것
 
-- **빠른 넘기기** = 앞뒤 그림을 미리 읽어 둠 · 탐색기와 같은 이름 순서 · `]` `[` 로 다음·이전 폴더
+- **빠른 넘기기** = PageDown · PageUp 으로 바로 다음 · 이전 그림 · `]` `[` 로 다음·이전 폴더
 - **확대·축소** = 아래 도구줄 버튼 · `+` `-` · Ctrl+휠(커서 자리 기준) · 배율 눌러 고르기 · 확대하면 미리보기 창
 - **사진 정보 (Tab)** = 히스토그램 · 파일 정보 · EXIF(카메라·렌즈·셔터·조리개·ISO·초점 거리·찍은 때) · GPS 를 지도로
 - **압축 파일 안 그림** = zip · cbz · rar · cbr · 7z · tar 를 풀지 않고 봄
