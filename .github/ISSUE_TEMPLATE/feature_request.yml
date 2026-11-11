@@ -1,0 +1,17 @@
+name: 기능 요청
+description: 있었으면 하는 기능이나 바꿨으면 하는 점
+title: "[요청] "
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: want
+    attributes:
+      label: 무엇이 있었으면 좋겠나요?
+      placeholder: 예) 사진을 자동으로 넘겨 보는 슬라이드쇼가 있으면 좋겠어요.
+    validations:
+      required: true
+  - type: textarea
+    id: why
+    attributes:
+      label: 어떤 때 필요한가요?
+      placeholder: 예) 행사 사진을 고객과 같이 볼 때요.
