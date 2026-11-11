@@ -33,7 +33,7 @@ Name: "{autoprograms}\ArdView"; Filename: "{app}\ArdView.exe"
 
 [Registry]
 ; 연결 프로그램 종류
-Root: HKCU; Subkey: "Software\Classes\ArdView.Image"; ValueType: string; ValueName: ""; ValueData: "그림 파일"; Flags: uninsdeletekey
+Root: HKCU; Subkey: "Software\Classes\ArdView.Image"; ValueType: string; ValueName: ""; ValueData: "ArdView 그림"; Flags: uninsdeletekey
 Root: HKCU; Subkey: "Software\Classes\ArdView.Image\DefaultIcon"; ValueType: string; ValueName: ""; ValueData: "{app}\ArdView.exe,0"
 Root: HKCU; Subkey: "Software\Classes\ArdView.Image\shell\open\command"; ValueType: string; ValueName: ""; ValueData: """{app}\ArdView.exe"" ""%1"""
 
